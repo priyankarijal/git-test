@@ -146,7 +146,7 @@ def _select_weighted_mode_rows(source, p_Run_Mode: str, performance_year: int, b
 
 def _carry_source_measures(source):
     return (
-        source.with_column("TREND_PERCENT", col("TREND").cast("NUMBER(5,2)"))
+        source.with_column("TREND_PERCENT", col("TREND").cast("NUMBER(5,3)"))
         .with_column("AVERAGE_BURDEN_SCORE", round(col("AVERAGE_BURDEN_SCORE"), 2).cast("NUMBER(38,2)"))
         .with_column("BURDEN_SCORE_POINTS", col("BURDEN_SCORE_POINTS").cast("NUMBER(38,2)"))
     )
